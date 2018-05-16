@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.repomean.poweroff.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="377dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+
+        <Button
+            android:id="@+id/btnEnableAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/btnDisableAdmin"
+            android:layout_marginTop="31dp"
+            android:text="Enable Admin"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="257dp" />
+
+        <Button
+            android:id="@+id/btnLock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="72dp"
+            android:text="Lock"
+            tools:layout_editor_absoluteX="165dp"
+            tools:layout_editor_absoluteY="421dp" />
+
+        <Button
+            android:id="@+id/btnDisableAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnLock"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="71dp"
+            android:text="Disable Admin"
+            tools:layout_editor_absoluteX="129dp"
+            tools:layout_editor_absoluteY="106dp" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
