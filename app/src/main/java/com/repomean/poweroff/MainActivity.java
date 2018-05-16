@@ -6,12 +6,20 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
+    Switch toggleOverlaySwitch;
+    TextView overlayLabel;
+    EditText testText;
 
     private static final int ADMIN_INTENT = 15;
     private static final String description = "Some Description About Your Admin";
@@ -31,6 +39,25 @@ public class MainActivity extends Activity implements OnClickListener {
         btnEnableAdmin.setOnClickListener(this);
         btnDisableAdmin.setOnClickListener(this);
         btnLock.setOnClickListener(this);
+        startService(new Intent(this, HUD.class));
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View vi = inflater.inflate(R.layout.overlay, null);
+
+        toggleOverlaySwitch = (Switch) findViewById(R.id.openOverlay);
+
+        toggleOverlaySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                toggleService();
+            }
+        });
+    }
+
+    private void toggleService(){
+        Intent intent = new Intent(this, HUD.class);
+        if(!stopService(intent)){
+            startService(intent);
+        }
     }
 
     @Override
@@ -56,6 +83,7 @@ public class MainActivity extends Activity implements OnClickListener {
                     Toast.makeText(getApplicationContext(), "Not Registered as admin", Toast.LENGTH_SHORT).show();
                 }
                 break;
+
         }
     }
 
