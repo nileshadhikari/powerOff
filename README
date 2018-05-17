@@ -1,0 +1,19 @@
+# powerOff
+First commit can lock screen. ONLY AVAILABLE ON ANDROID
+
+INTRODUCTION
+  My power button was not working. I installed an application named Assitive touch. I wanted a overlay button so i can lock my phone
+  programmatically. One app i installed didnt allow me to do this. Another app showed a notification in my cellphone at all times.
+  I didnt like it and i decided to create an app for myself. All i did mostly was to copy the code from two stackoverflow queries.
+  But i will update this app and modify as per my requirement in the near future. The stackoverflow links are below
+  1) https://stackoverflow.com/questions/19745890/how-do-i-lock-phone-programmatically-android
+  2) https://stackoverflow.com/questions/41133448/android-studio-show-information-from-main-activity-in-overlay-activity
+  
+  
+1ST COMMIT
+  First commit can lock the screen if the application is opened
+  
+2ND COMMIT 
+  Second commit shows a star object at the middle right corner of the screen at all times. If you click the star object, this locks 
+  the screen
+  
